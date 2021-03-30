@@ -71,6 +71,8 @@ app.post('/imageurl', (req, res) => {
 // const PORT = process.env.PORT;
 // const PORT = 'hello';
 
-app.listen(process.env.PORT || 3001, () => {
+app.set('port', process.env.PORT || 3001);
+
+app.listen(app.get('port'), () => {
 	console.log(`server listening on port ${process.env.PORT}`);
 });
